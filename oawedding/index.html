@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>RSVP Oscar and Alejandra's Wedding</title>
+    <meta name="description" content="A form to RSVP to the wedding event.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="wedding.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.radios').change(function() {
+                console.log("we is in the clicking handler");
+                if (this.id === 'yes') {
+                    $('#weHaveConfirmation').slideDown('slow');
+                } else if ($('#weHaveConfirmation').is(':visible')) {
+                    $('#weHaveConfirmation').slideUp('slow');
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div id="content">
+        <header id="theHead">
+            <h1 class="titel">RSVP to Oscar's and Alejandra's Wedding</h1>
+        </header>
+        <div id="rsvpForm">
+            <form id="rsvp">
+                <label for="name" id="rsvpName">Tu Nombre(Nombre de Familia)/Your Name(Family Name) <br /></label>
+                <input type="text" name="name" id="input_name"></input>
+                <h3 class="smallHeader">¿Podrás Acompañarnos? Will you be joining us?</h3>
+                <input type="radio" id="yes" class="radios" name="confirmRSVP" value="yes"><label for="confirmRsvp">Sí-Yes</label><br />
+                <input type="radio" id="nope" class="radios" name="confirmRSVP" value="no" checked="checked"><label for="nope">No</label><br>
+                <div id="weHaveConfirmation">
+                    <label for="numAdults">¿Cuantos adultos? (13 años en adelante) How many adults? (13 years and older)</label>
+                    <select name="numAdults" id="numberAdults">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <br><br>
+                    <label for="numKids">¿Cuantos niños? (12 años para abajo) How many kids? (12 years and younger)</label>
+                    <select name="numKids" id="numberKids">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <input type="submit" name="submit" id="formSubmit" value="Entregar Respuesta-Submit Response"></button>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
